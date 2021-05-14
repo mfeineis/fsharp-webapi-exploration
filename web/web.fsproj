@@ -7,6 +7,8 @@
     <ProjectReference Include="..\lib\lib.fsproj" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WebApiAdapter.fs" />
+    <Compile Include="Features/Hello.fs" />
     <Compile Include="Features/WeatherForecast.fs" />
     <Compile Include="Startup.fs" />
     <Compile Include="Program.fs" />

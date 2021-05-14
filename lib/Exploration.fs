@@ -2,6 +2,21 @@ namespace Exploration
 
 open System
 
+type Success<'a> =
+    | Ok of 'a
+    | Created of 'a
+
+type Failure<'a> =
+    | RouteFailure
+    | ValidationFailure of 'a
+    | IntegrationFailure of 'a
+    | StabilityFailure
+
+type HandlerResult<'res, 'err> =
+    | Success of Success<'res>
+    | Failure of Failure<'err>
+
+
 // [<CLIMutable>]
 type WeatherForecast =
     { Date: DateTime
