@@ -7,11 +7,11 @@ open System.Linq
 open System.Threading.Tasks
 open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Hosting
-open Microsoft.AspNetCore.HttpsPolicy;
+open Microsoft.AspNetCore.HttpsPolicy
 open Microsoft.AspNetCore.Mvc
 open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
-open Microsoft.Extensions.FileProviders;
+open Microsoft.Extensions.FileProviders
 open Microsoft.Extensions.Hosting
 
 type Startup(configuration: IConfiguration) =
@@ -26,11 +26,13 @@ type Startup(configuration: IConfiguration) =
     member _.Configure(app: IApplicationBuilder, env: IWebHostEnvironment) =
         if (env.IsDevelopment()) then
             app.UseDeveloperExceptionPage() |> ignore
-        app.UseHttpsRedirection()
-           .UseRouting()
-           .UseAuthorization()
-           .UseEndpoints(fun endpoints ->
-                endpoints.MapControllers() |> ignore
-            ) |> ignore
+
+        app
+            .UseHttpsRedirection()
+            .UseRouting()
+            .UseAuthorization()
+            .UseEndpoints(fun endpoints -> endpoints.MapControllers() |> ignore)
+        |> ignore
+
         app.UseDefaultFiles() |> ignore
         app.UseStaticFiles() |> ignore

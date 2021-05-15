@@ -1,0 +1,9 @@
+[*.fs]
+indent_size=4
+max_line_length=80
+fsharp_multiline_block_brackets_on_same_column=true
+fsharp_max_record_number_of_items=1
+fsharp_max_elmish_width=10
+fsharp_single_argument_web_mode=true
+fsharp_multi_line_lambda_closing_newline=true
+fsharp_disable_elmish_syntax=true

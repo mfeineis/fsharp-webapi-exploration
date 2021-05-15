@@ -7,10 +7,9 @@ open Exploration.Web
 
 [<ApiController>]
 [<Route("api/[controller]")>]
-type HelloController () =
+type HelloController() =
     inherit ControllerBase()
 
     [<HttpGet>]
     member this.Get() =
-        WebApiAdapter.toHttpResult this (Success (Ok "Hello, World!"))
-
+        WebApiAdapter.toHttpResult this (Success(Ok "Hello, World!"))
